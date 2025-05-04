@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Employee List</title>
+  <link rel="stylesheet" href="style.css">
+
+  
+</head>
+
+<body id="employees">
+
+  <h1 style="margin-left:42%;margin-top:25px;">Employee List</h1>
+
+  <table id="employee_table" style="margin-top:50px">
+    <thead style="align-items: center;">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Joining Date</th>
+        <th>Gender</th>
+        <th>Employment Type</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>EMP001</td>
+        <td>Mohim</td>
+        <td>Mohim@example.com</td>
+        <td>IT</td>
+        <td>2023-04-01</td>
+        <td>Male</td>
+        <td>Fulltime</td>
+        <td><button onclick="editRow(this)">Edit</button> <button onclick="deleteRow(this)">Delete</button></td>
+      </tr>
+      <tr>
+        <td>EMP002</td>
+        <td>Olivia</td>
+        <td>olivia@example.com</td>
+        <td>HR</td>
+        <td>2022-10-15</td>
+        <td>Female</td>
+        <td>Part-time</td>
+        <td><button onclick="editRow(this)">Edit</button> <button onclick="deleteRow(this)">Delete</button></td>
+      </tr>
+      <tr>
+        <td>EMP003</td>
+        <td>Shahed</td>
+        <td>shahed@example.com</td>
+        <td>Sales</td>
+        <td>2021-01-12</td>
+        <td>Male</td>
+        <td>Fulltime</td>
+        <td><button onclick="editRow(this)">Edit</button> <button onclick="deleteRow(this)">Delete</button></td>
+      </tr>
+      <tr>
+        <td>EMP004</td>
+        <td>cat woman</td>
+        <td>catie@example.com</td>
+        <td>Marketing</td>
+        <td>2023-07-25</td>
+        <td>Female</td>
+        <td>Fulltime</td>
+        <td><button onclick="editRow(this)">Edit</button> <button onclick="deleteRow()">Delete</button></td>
+      </tr>
+      <tr>
+        <td>EMP005</td>
+        <td>batman</td>
+        <td>batman@example.com</td>
+        <td>IT</td>
+        <td>2022-03-05</td>
+        <td>Male</td>
+        <td>Part-time</td>
+        <td><button onclick="editRow(this)">Edit</button> <button onclick="deleteRow(this)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div id="editSection">
+    <h3>Edit Employee</h3>
+    <form onsubmit="saveChanges(event)">
+      <input type="text" id="edit_id" readonly>
+      <input type="text" id="edit_name" required>
+      <input type="email" id="edit_email" required>
+      <select id="edit_dept" required>
+        <option value="">Select Department</option>
+        <option value="IT">IT</option>
+        <option value="HR">HR</option>
+        <option value="Sales">Sales</option>
+        <option value="Marketing">Marketing</option>
+      </select>
+      <input type="date" id="edit_date" required>
+      <select id="edit_gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+      <select id="edit_type">
+        <option value="Fulltime">Fulltime</option>
+        <option value="Part-time">Part-time</option>
+      </select>
+      <button type="submit">Save</button>
+      <button type="button" onclick="cancelEdit()">Cancel</button>
+    </form>
+  </div>
+
+  <script>
+    function deleteRow(button) {
+      const row = button.closest('tr');
+      if (confirm("Are you sure you want to delete this employee?")) {
+        row.remove();
+      }
+    }
+    let currentRow = null;
+    
+    function editRow(button) {
+      currentRow = button.parentNode.parentNode;
+    
+   
+      document.getElementById("edit_id").value = cells[0].textContent;
+      document.getElementById("edit_name").value = cells[1].textContent;
+      document.getElementById("edit_email").value = cells[2].textContent;
+      document.getElementById("edit_dept").value = cells[3].textContent;
+      document.getElementById("edit_date").value = cells[4].textContent;
+      document.getElementById("edit_gender").value = cells[5].textContent;
+      document.getElementById("edit_type").value = cells[6].textContent;
+    
+   
+      document.getElementById("editSection").style.display = "block";
+  }
+    
+
+
+
+function saveChanges(event) {
+  event.preventDefault();
+  if (!currentRow) return;
+
+  currentRow.children[1].textContent = document.getElementById("edit_name").value;
+  currentRow.children[2].textContent = document.getElementById("edit_email").value;
+  currentRow.children[3].textContent = document.getElementById("edit_dept").value;
+  currentRow.children[4].textContent = document.getElementById("edit_date").value;
+  currentRow.children[5].textContent = document.getElementById("edit_gender").value;
+  currentRow.children[6].textContent = document.getElementById("edit_type").value;
+
+  document.getElementById("editSection").style.display = "none";
+  currentRow = null;
+}
+
+    function cancelEdit() {
+      document.getElementById("editSection").style.display = "none";
+      currentRow = null;
+    }
+  </script>
+  
+
+</body>
+
+</html>
