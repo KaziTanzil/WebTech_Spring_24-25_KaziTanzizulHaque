@@ -62,6 +62,6 @@ if(submit){ submit.addEventListener("click",()=>
 
 
 
-  
+  console.log(2+'2')
 
          
