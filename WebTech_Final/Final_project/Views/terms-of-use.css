@@ -1,0 +1,185 @@
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+  color: #333;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 100px; /* Footer height buffer */
+}
+
+/* Navigation */
+#Navigation-head {
+  background-color: red;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+#Navigation-head-content {
+  padding: 4px;
+  margin-left: 15%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#home-logo {
+  font-size: 1.5rem;
+}
+
+#search-ber {
+  height: 25px;
+  width: 500px;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  padding-left: 20px;
+  font-size: 1rem;
+  color: black;
+}
+
+#Navigation-tail {
+  background-color: rgb(122, 72, 72);
+  color: azure;
+  position: fixed;
+  top: 35px;
+  left: 0;
+  right: 0;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+}
+
+#Navigation-tail-content {
+  margin-left: 15%;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+#main-wrapper {
+  min-height: calc(100vh - 190px); /* Adjust for nav (70px) + footer (~120px) */
+  padding-top: 80px;
+  padding-bottom: 120px; /* Ensure footer isn’t overlapped */
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #ffffff;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: #1b4d34;
+}
+
+h3 {
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+/* FAQ items */
+.faq-item {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-left: 3px solid #1b4d34;
+}
+
+/* Links */
+a {
+  color: #1b4d34;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Unordered lists */
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+/* Paragraph spacing */
+p {
+  margin-bottom: 15px;
+}
+
+
+/* Footer */
+#foote {
+  background-color: rgb(27, 77, 52);
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 2%;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#number, #copy {
+  padding: 10px;
+}
+
+#social-media {
+  display: flex;
+  gap: 12px;
+  margin-top: 5px;
+}
+
+#social-media a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+#social-media a:hover {
+  color: #66b2ff;
+}
+
+#legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+#legal-links a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#legal-links a:hover {
+  color: #66b2ff;
+}
