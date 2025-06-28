@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup page</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+
+<body>
+    <div id="formbox">
+        <div id="formcontainer">
+            <div id="formheader">
+
+                <h1>
+                    Signup Form
+                </h1>
+                <form action="">
+                <div>
+                <label for="username">User Name</label>
+                <input type="text" id="username" placeholder="username" required><br>
+
+                <div id="msg">
+                    <form action="">
+                        <p id="p1" style="display: none;">User name must be start with Character</p><br>
+                        <p id="p3" style="display: none;">password must contain a special character</p><br>
+                        <p id="p2" style="display: none;">password must be 8 character</p>
+                        <button type="submit" id="okbtn" style="margin-left: 40%; margin-bottom:25%;">OK</button>
+
+                    </form>
+                 </div>
+                
+
+                <label for="password">Password</label>
+                <input type="text" id="password" placeholder="password" required><br>
+
+                
+
+                <label for="email">Email </label>
+                <input type="email" id="email"  required><br>
+
+                <label for="gender">Gender </label>
+                <label for="male" style="padding-left: 20px;">Male</label>
+                <input type="radio" id="gender" name="gender" value="Male" required>
+                <label for="female">Female</label>
+                <input type="radio" id="gender" name="gender" value="Female"><br>
+                
+                <label for="favourite language">Favourite Language</label>
+                <select name="language" id="language" required>
+                    <option value="" disabled selected>select a language</option>
+                    <option value="C++">C++</option>
+                    <option value="javaScript">javaScript</option>
+                    <option value="Python">Python</option>
+                    <option value="Jave">Java</option>
+                  </select> <br>
+
+                  <label for="image">image</label>
+                  <input type="file" name="img" id="image" accept=".png,.jpg,.jpeg" required> <br>
+
+                  <button type="submit" id="submitbtn" >Submit</button>
+                  <input type="reset" id="resetbtn">
+
+                </form>
+
+
+
+                 </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+<script src="javaScript.js"></script>
+</body>
+
+</html>
